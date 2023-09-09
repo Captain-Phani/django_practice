@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .nav{
+                 height:30px;
+            padding:15px;
+            background-color:#000;
+            color:#fff;
+            font-weight:500;
+            font-size:20px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            column-gap:30px;
+        }
+        .login{
+        color:White;
+    </style>
+</head>
+<body>
+<navbar class="nav">
+    <h3 >Logo</h3>
+    <div>
+        <form method="GET" action="{% url 'home' %}">
+            <input type="text" name="q" placeholder="search....">
+        </form>
+    </div>
+    <div>
+        <a href="{% url 'login_page' %}" class="login">Login</a>
+    </div>
+</navbar>
+<div>
+    {% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li>{{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+</div>
+</body>
+</html>
